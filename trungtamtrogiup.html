@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #EA4A25;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .search-bar {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+            .search-bar input[type="text"] {
+                padding: 10px;
+                width: 80%;
+                max-width: 600px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+        .faq-section {
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 15px;
+        }
+
+            .faq-item h3 {
+                margin: 0;
+            }
+
+            .faq-item p {
+                display: none;
+                margin-top: 10px;
+            }
+
+            .faq-item h3:hover {
+                cursor: pointer;
+                color: #4CAF50;
+            }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TRUNG TÂM TRỢ GIÚP</h1>
+    </header>
+
+    <main>
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm để được giúp đỡ...">
+        </div>
+
+        <section class="faq-section">
+            <div class="faq-item">
+                <h3>Bạn đã quên mật khẩu?</h3>
+                <p>Nếu bạn đã quên mật khẩu, bạn có làm lại nó bằng cách chọn vào 'Đã quên mật khẩu' để đăng nhập vào trang...</p>
+            </div>
+            <div class="faq-item">
+                <h3>Làm thế nào để liên hệ với bộ phận hỗ trợ?</h3>
+                <p>Bạn có thể liên hệ với bộ phận hỗ trợ bằng cách gửi email cho chúng tôi theo địa chỉ @gmail.com hoặc gọi đến đường dây nóng của chúng tôi...</p>
+            </div>
+            <div class="faq-item">
+                <h3>Làm thế nào để cập nhật hồ sơ của tôi?</h3>
+                <p>Để cập nhật hồ sơ của bạn, hãy vào trang cài đặt và nhấp vào 'Chỉnh sửa hồ sơ'...</p>
+            </div>
+            <div class="faq-item">
+                <h3>Trả Hàng & Hoàn Tiền</h3>
+                <p>Vui lòng liên hệ với bên bán, chúng tôi sẽ nhanh chóng xử lí đơn hàng và hoàn tiền khi đơn hàng có sự cố</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    document.querySelectorAll('.faq-item h3').forEach(function (faqTitle) {
+        faqTitle.addEventListener('click', function () {
+            var answer = this.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>

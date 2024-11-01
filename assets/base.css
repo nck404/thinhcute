@@ -1,0 +1,184 @@
+:root {
+    --white-color : #fff;
+    --black-color: black;
+    --text-color: #333;
+    --main-color:#EE4D2D;
+    --border-color:#dbdbdb;
+    --primary-color:#f53e2d;
+
+}
+* {
+    box-sizing: inherit;
+    /* các thuộc tính sau này sẽ kết thừa box-sizing: border-box trong trang web  */
+
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6em;
+    /* chiều cao của chữ  */
+    font-family:'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    /* chiều ngang tối đa là 1200px , do màn hình máy tính có chiều ngang lớn hơn
+    nên các chữ sẽ tự động lui vào trong để bằng 1200px đã cho  */
+}
+.grid__column-10 {
+    width: 720px;
+    z-index: 1;
+}
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-2-4 {
+    padding-right: 20px;
+    width: 20%;
+    border-radius: 5px;
+}
+.grid__full-width {
+    width: 100%;
+    /* độ rộng tối đa  */
+}
+.grid__row {
+    display: flex;
+    /* các box sẽ hiển thị theo hàng ngang  */
+    flex-wrap: wrap;
+    /* các box sẽ hiển thị bên dưới hoặc bên trên nếu bị tràn  */
+    z-index: 1;
+}
+/* animation cho mã qr  */
+@keyframes animation_qr {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+/* Modal  */
+/* .modal {
+    /* tạo phần khung chiếm toàn bộ màn hình  */
+    /* position: fixed; */
+    /* top:0; */
+    /* right: 0; */
+    /* bottom: 0; */
+    /* left: 0; */
+    /* display: flex; */
+/* } * */
+/* dùng display flex, sau đó margin auto để căn giữa cho trang web   */
+/* để hiển thị các màu đè lên nhau dùng z-index , cái nào có giá trị z-index lớn hơn thì sẽ nằm bên trên  */
+ .modal__overlay {
+     z-index: 1;
+    position: absolute;
+    width: 100%;   
+    height: 100%;
+    background-color:rgba(0,0,0,0.4);
+    /* tạo phần màu đen nhạt bao quanh khung tìm kiếm 
+    /* cho khung chiếm toàn bộ màn hình  */
+    animation: animation_qr ease-in .3s;
+    /* thêm animation cho phần viền đen  */
+    display: none; 
+ } 
+/* /* tạo hiệu ứng động để hiện lên phần thông báo đăng ký  */
+@keyframes growth {
+    from {
+        transform: scale(70%);
+    }
+    to {
+        transform: scale(100%);
+    }
+}
+.modal__body {
+    height: 500px;
+    width: 700px;
+    margin: auto;
+    background-color:#fff;
+    z-index: 2;
+    border-radius: 5px;
+    /* thêm hiệu ứng động cho phần thông báo đăng ký  */
+    animation: growth linear .3s;
+    display: none;
+}
+/* Css cho chữ trở lại và đăng ký  */
+.form__controls {
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+.form__controls_btn {
+    height: 25px;
+    min-width: 80px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.form__controls_btn:hover {
+    background-color: #dbdbdb;
+}
+.form__controls_btn--primary {
+    color: var(--white-color);
+    height: 25px;
+   min-width: 80px;
+    background: #EE4D2D;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+
+}
+/* Trường hợp nút bị lỗi  */
+.form__controls_btn--disabled {
+    cursor: default;
+    filter: brightness(80%);
+    /* giảm độ sáng đi 80% */
+}
+/* pagination  */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pagination-items {
+    list-style: none;
+    margin: 0 8px;
+}
+ 
+.pagination-items-link {
+    border-radius: 2px;
+    text-decoration: none;
+    color: #939393;
+    font-size: 1.4rem;
+    font-weight: 600;
+    min-width: 40px;
+    height: 30px;
+    display: block;
+    /* thẻ a không có tích block nên không áp dụng được chiều ngang vì vậy cần phải thêm display block cho nó  */
+    text-align: center;
+    line-height: 30px;    
+}
+.pagination-items-active .pagination-items-link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.pagination-items-active:hover {
+    opacity: 80%;
+}
+.pagination-items-icon-left {
+    margin-top: 4px;
+}
+.pagination-items-icon-right {
+    margin-top: 4px;
+
+}
+
+
+
