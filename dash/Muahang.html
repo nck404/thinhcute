@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TCK Shop</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/kTc2kG7rW+6D8Er7Xq7F4P6gEjS4HP8Dl8YgF8Kt5l6vK7Ud2nB1Yndh5p8P1qR3j72NNqE6rLPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/img/styles.css">
+  </head>
+  <body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <nav class="navbar">
+      <p class="logo-nav">TCK Shop</p>
+      <p class="line">|</p>
+      <p class="t-nav" id="username"> 
+        <i class="fa-solid fa-user"></i> account 
+      </p>
+      <p class="line">|</p>
+      <p class="t-nav" id="current-time"><i class="fa-solid fa-clock"></i></p>
+      <p class="line">|</p>
+      <p class="t-nav" id="rex">> project</p>
+       <div class="right">
+        <i class="fa-solid fa-cart-shopping"></i>
+       </div>
+    </nav>
+    <div class="search">
+      <input type="text" class="psearch" placeholder="Search for products">
+      <div class="search-icon">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+    <style>
+     
+    </style>
+    <script>
+      function updateTime() {
+        const currentTimeElement = document.getElementById("current-time");
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, "0");
+        const minutes = now.getMinutes().toString().padStart(2, "0");
+        const seconds = now.getSeconds().toString().padStart(2, "0");
+        currentTimeElement.innerHTML = `<i class="fa-solid fa-clock"></i>${hours}:${minutes}`;
+      }
+
+      setInterval(updateTime, 1000);
+
+      updateTime();
+
+      const loaderBg = document.querySelector(".loader-bg");
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const loaderBg = document.querySelector(".loader-bg");
+        loaderBg.style.display = "flex";
+
+        window.addEventListener("load", function () {
+          loaderBg.style.display = "none";
+        });
+      });
+
+      function getLastPathComponent(url) {
+        const parts = url.split("/");
+        const lastPart = parts[parts.length - 1];
+        if (lastPart.includes(".html")) {
+          return lastPart.slice(0, -5);
+        }
+        return lastPart;
+      }
+
+      function updatePageTitle() {
+        const currentUrl = window.location.href;
+        const lastPathComponent = getLastPathComponent(currentUrl);
+        const usernameElement = document.getElementById("rex");
+        usernameElement.innerHTML = `> ${lastPathComponent}`;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        updatePageTitle();
+      });
+    </script>
+  </body>
+</html>
