@@ -1,9 +1,12 @@
 .header {
+  z-index: 9999999999 !important;
   height: 150px;
-  background-image: linear-gradient(0, #c05ea7, #f52d9b);
-  /* background-image: pink; */
-
-  z-index: 1000;
+  width: 1350px;
+  opacity: 0.9;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  /* border-bottom: 3px solid #006b6e; */
+  box-shadow: 0 2px 0 0 #000;
 }
 .header__navbar {
   display: flex;
@@ -11,6 +14,11 @@
   /* cho thuộc tính nằm ngang  */
   justify-content: space-between;
 }
+/* .img__header {
+  max-width: 100%;
+  height: auto;
+  display: block;
+} */
 .header_navbar-list {
   list-style: none;
   /* xoá bỏ dấu chấm đằng trước thẻ li */
@@ -26,11 +34,11 @@
 .header__navbar-items-links {
   font-size: 1.3rem;
   /* cỡ chữ là 1.3 rem  */
-  font-weight: 300;
+  font-weight: 700;
   /* độ dày của chữ là 300  */
   text-decoration: none;
   /* bỏ dấu gạch chân dưới chữ  */
-  color: var(--white-color);
+  color: rgb(8, 1, 8);
 }
 .header__navbar-items {
   min-height: 26px;
@@ -84,18 +92,17 @@
 .header__navbar-icon {
   margin: 0 4px;
   /* căn khoảng cách trái phải giữa các icon là 4px  */
-
 }
 .header__navbar-items,
 .header__navbar-items-links,
-.header__navbar-icon-links, 
-.header_navbar-list{
+.header__navbar-icon-links,
+.header_navbar-list {
   /* căn giữa chữ kết nối và các icon  */
   display: inline-flex;
   /* nằm trang 1 hàng ngang  */
   align-items: center;
   /* căn giữa  */
-} 
+}
 .header__navbar-items-no-pointer {
   cursor: text;
   /* bỏ hình bàn tay khi di chuột đến chữ kết nối  */
@@ -103,7 +110,7 @@
 }
 /* Header qr code  */
 .header__qr {
-  position:absolute;
+  position: absolute;
   left: 0;
   top: 20px;
   display: none;
@@ -111,12 +118,11 @@
   margin-top: 10px;
   animation: animation_qr ease-in 1s;
   /* Tên animation là animation_qr kiểu hiển lên là ease-in thời gian thực hiện trong 1s; */
-  z-index: 1;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  z-index: 2;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 .header__navbar-pseudo:hover .header__qr
-/* tạo lớp giả với container là .header__navbar-items truy cập lớp giả tới items là .header__qr */
-{ 
+/* tạo lớp giả với container là .header__navbar-items truy cập lớp giả tới items là .header__qr */ {
   display: block;
   /* giúp hiện lại mã qr  */
 }
@@ -125,10 +131,9 @@
   width: 120px;
   height: 120px;
 }
-.header__qr-apps{
-   display: flex;
-  justify-content:space-between ;
-
+.header__qr-apps {
+  display: flex;
+  justify-content: space-between;
 }
 .header__qr-apps-img {
   margin-top: 20px;
@@ -136,7 +141,7 @@
   height: 18px;
 }
 /* Chỉnh sửa vị trí của icon google play và app store  */
-.header__qr-apps-img:nth-child(2){
+.header__qr-apps-img:nth-child(2) {
   /* Ở đây là chỉnh sửa vị trí của appstore cho thẳng hàng với mã qr  */
   margin-right: 2px;
 }
@@ -148,34 +153,34 @@
   top: 118%;
   background-color: var(--white-color);
   right: 0;
-  border: 1px solid #D3D3D3;
+  border: 1px solid #d3d3d3;
   /* display: none; */
   cursor: default;
   /* bỏ hình bàn tay ghi di chuột vào  */
   transform-origin: top right;
   /* vị trí hiện animation  */
-  animation: animation_announce ease-in .5s;
-  will-change: opacity,transform;
+  animation: animation_announce ease-in 0.5s;
+  will-change: opacity, transform;
   /* giúp tối ưu chuyển động trên trang web  */
-  display:none;
+  display: none;
   /* ẩn hiệu ứng thông báo lúc đầu  */
 }
 /* tạo hình tam giác trồi lên ở phần thông báo  */
 .header__announce::before {
-  content:"";
+  content: "";
   border: 20px solid;
-  border-color: transparent transparent  var(--white-color) transparent;
+  border-color: transparent transparent var(--white-color) transparent;
   position: absolute;
   top: -30px;
   right: 13px;
 }
-  /* tạo lớp giả khi di chuột vào sẽ hiện animation  */
+/* tạo lớp giả khi di chuột vào sẽ hiện animation  */
 .header__navbar-items-announce:hover .header__announce {
-    display: block;
-  }
-  /* tạo animation cho announce  */
+  display: block;
+}
+/* tạo animation cho announce  */
 @keyframes animation_announce {
-  from { 
+  from {
     transform: scale(0);
     opacity: 0;
     /* kích thước ban đầu là 0  */
@@ -184,7 +189,7 @@
     opacity: 1;
     transform: scale(1);
     /* cho trở về kích thước ban đầu  */
-  } 
+  }
 }
 .header__announce-header {
   height: 40px;
@@ -198,10 +203,9 @@
   font-size: 1.4rem;
   line-height: 40px;
   /* chiều cao của dòng bằng chiều cao của cả phần thông báo  */
-
 }
 .header__announce-list {
-  padding-left:0;
+  padding-left: 0;
   /* bỏ đi 40px mặt định của trình duyệt  */
 }
 /* muốn dùng thuộc tính display flex cho thẻ nào thì phải css cho thẻ truớc nó */
@@ -215,31 +219,31 @@
 .header__announce-links {
   width: 100%;
   display: inline-flex;
-  text-decoration: none; 
+  text-decoration: none;
   /* bỏ phần gạch chân mặt định của thẻ a  */
-  background-color: rgba(238,75, 73 , 0.08);
+  background-color: rgba(238, 75, 73, 0.08);
 }
 .header__announce-img {
   width: 58px;
   object-fit: contain;
   /* giúp cho ko bị vỡ ảnh  */
+  background-size: contain;
 }
 .header__announce-info {
-
 }
 .header__announce-info-name {
   display: block;
   /* do mặt định thẻ span không có thuộc tính block nên không tự xuống hàng nên chúng ta phải tự 
   thêm thuộc tính này vào  */
   font-size: 1.4rem;
-  color: var(--black-color); 
+  color: var(--black-color);
   font-weight: 800;
 }
 .header__announce-info-description {
   display: block;
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: var(--black-color); 
+  color: var(--black-color);
   opacity: 0.8;
   margin-top: 4px;
 }
@@ -259,7 +263,6 @@
 /* muốn làm hiệu ứng động thì cài animation trước rồi sau đó cài lớp giả vào sau  */
 /* Form đăng kí  */
 
-
 .form__container {
   padding: 0 32px;
 }
@@ -269,7 +272,7 @@
   /* căn cho đăng kí và đăng nhập nằm ngang  */
   justify-content: space-between;
 }
-.form__header-dangki{
+.form__header-dangki {
   margin-left: 45px;
   font-size: 2.2rem;
   font-weight: 600;
@@ -322,7 +325,6 @@
   background-color: #3a5398;
   font-size: 1.6rem;
   color: var(--white-color);
-
 }
 .btn--icon-gg {
   font-size: 1.6rem;
@@ -331,32 +333,33 @@
 }
 /* Tạo phần logo và ô tìm kiếm  */
 .header__logo {
-  width: 100%;
   display: flex;
   padding: 0 8px;
+  margin-top: -10px;
 }
 .header__search {
   margin-left: 150px;
- 
+
   margin-top: 10px;
-  flex: 1; 
+  flex: 1;
   height: 35px;
-  background-color:var(--white-color);
+  background-color: var(--white-color);
   border-radius: 2px;
   display: flex;
   align-items: center;
+  border: 1px solid #000;
 }
 
 .logo_img {
   width: 100px;
   height: 100px;
   margin: auto;
-  border-radius:2px;
+  border-radius: 50%;
 }
 
 /* Tạo ô tìm kiếm  */
 .header__search {
-  flex:1;
+  flex: 1;
   height: 100%;
   position: relative;
 }
@@ -370,7 +373,7 @@
   font-size: 1.4rem;
 }
 .down-icon {
-  color: #4A4A4A;
+  color: #4a4a4a;
   margin: 5px 8px;
   position: relative;
   top: 5px;
@@ -390,15 +393,21 @@
 
 .btn-search {
   border: none;
-  background-color:var(--primary-color);
+  background-color: rgb(247, 20, 144);
   padding: 6px 16px;
   margin: 0 8px;
   border-radius: 3px;
   outline: none;
-
+}
+.btnvideodanhgia {
+  border-radius: 5px;
+}
+.btnvideodanhgia:hover {
+  background-color: rgb(247, 20, 144);
+  cursor: pointer;
 }
 .btn-search:hover {
-  background-color: #fe6433;
+  background-color: rgb(152, 0, 247);
   cursor: pointer;
 }
 .search-icon {
@@ -410,7 +419,7 @@
   width: 120px;
   position: absolute;
   right: 0;
-  top:100%;
+  top: 100%;
   background-color: var(--white-color);
   padding: 6px;
   margin: 8px 12px;
@@ -421,11 +430,10 @@
   display: none;
   margin-top: 10px;
   animation: animation_qr ease-in-out 1s;
-
 }
 /* cần tạo 1 cái cầu để giữ cho option được hiển thị  */
 .search__option::after {
-  content:"";
+  content: "";
   display: block;
   width: 100%;
   height: 10px;
@@ -436,13 +444,13 @@
 .search__selection:hover .search__option {
   display: block;
 }
-.search__option-items  {
+.search__option-items {
   background-color: var(--white-color);
   font-size: 1.2rem;
   font-weight: 700;
 }
 .search__option-items:hover {
-  background-color: #D3D3D3;
+  background-color: #d3d3d3;
 }
 .search__option-items:first-child {
   border-top-left-radius: 3px;
@@ -454,7 +462,7 @@
 }
 /* Tạo phần lịch sử tìm kiếm  */
 .header__search-hisotry {
-  position:absolute;
+  position: absolute;
   top: calc(100% + 2px);
   left: 0;
   width: calc(100% - 16px);
@@ -468,11 +476,11 @@
   padding: 0 16px;
   color: #ccc;
   width: 654px;
+  z-index: 1;
 }
 .history-list {
-  padding:6px 16px;
+  padding: 6px 16px;
   margin-bottom: 0;
-
 }
 .history-items {
   list-style: none;
@@ -495,7 +503,7 @@ a {
   cursor: pointer;
 }
 .header__search::after {
-  content:"";
+  content: "";
   display: block;
   width: 100%;
   height: 10px;
@@ -504,17 +512,16 @@ a {
 }
 
 /* dùng css selector để hiện lịch sử tìm kiếm  */
-.header__search-input:focus ~.header__search-hisotry {
+.header__search-input:focus ~ .header__search-hisotry {
   cursor: pointer;
   display: block;
 }
 .header__cart {
   position: relative;
-  width: 300px;
+  width: 350px;
   text-align: center;
   margin-top: 14px;
-  z-index: 3;
-
+  z-index: 5000;
 }
 .header__cart-icon {
   font-size: 2.6rem;
@@ -523,14 +530,13 @@ a {
 .header_cart-no-cart {
   position: absolute;
   top: 40px;
-  right: 130px;
-   display: none;
+  right: 175px;
+  display: none;
   /* animation: animation_qr ease-in-out 4s 1s;  */
   cursor: default;
-
 }
 .no__cart-img {
-  border-radius: 2px;
+  border-radius: 5px;
   width: 350px;
   height: 200px;
 }
@@ -540,7 +546,7 @@ a {
   line-height: 1.4rem;
 }
 /* thêm phần mũi tên nhô lên cho giỏ hàng  */
-.header_cart-no-cart::after{
+.header_cart-no-cart::after {
   content: "";
   position: absolute;
   right: 3px;
@@ -561,19 +567,38 @@ a {
 /* Tạo phần body  */
 .app__container {
   background-color: #f5f5f5;
-  z-index: 2;
+  z-index: 100;
 }
 .catogory {
   width: 170px;
-  background-color: var(--white-color);
-  border-radius: 10px;
-  height: 1000px;
+  border-radius: 5px;
+  height: 6000px;
+  background: linear-gradient(270deg, #ff7f50, #1e90ff, #32cd32, #ffa07a);
+  background-size: 800% 800%;
+  animation: gradient 15s ease infinite;
+  overflow: hidden;
+}
+/* hiệu ứng động  */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.catogory {
+  height: 2700px;
 }
 .catogory__header {
-  color:black;
+  height: 30px;
+  color: black;
   font-size: 1.6rem;
   font-weight: 800;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .catagory-list {
   padding-left: 20px;
@@ -584,12 +609,12 @@ a {
   font-weight: 600;
   position: relative;
 }
-.catagory-items::before{
+.catagory-items::before {
   content: "";
   border-top: 1px solid blue;
-  position:absolute ;
+  position: absolute;
   left: 0;
-  top : 5px;
+  top: 5px;
 }
 .catagory__icon {
   padding: 3px 8px;
@@ -621,7 +646,7 @@ a {
 /* Home & filter  */
 
 .home__filter {
-  background-color: rgba(0,0,0,0.04);
+  background-color: rgba(0, 0, 0, 0.04);
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -631,11 +656,15 @@ a {
   border-radius: 2px;
 }
 .home__filter-title {
+  background-color: #007bff;
+  height: 40px;
   width: 100px;
   align-items: center;
   font-size: 1.2rem;
   font-weight: 600;
   margin-right: 10px;
+  padding-top: 10px;
+  padding-left: 5px;
 }
 .selection__input {
   /* margin: 10px 5px 12px 5px ;
@@ -651,10 +680,10 @@ a {
   font-weight: 800;
 }
 .btn {
+  border-radius: 5px;
   margin-right: 10px;
   font-size: 1rem;
   font-weight: 600;
-
 }
 .btn-active {
   font-weight: 600;
@@ -667,7 +696,7 @@ a {
 }
 .selection__input-list {
   position: absolute;
-  top:12px;
+  top: 12px;
   left: 0;
   right: 0;
   /* cho left và right bằng 0 thì sẽ tự bằng chiều ngang của chính nó  */
@@ -681,9 +710,8 @@ a {
   font-weight: 600;
   padding-bottom: 10px;
 }
-.selection__input-items-links{
+.selection__input-items-links {
   margin-right: 0;
-
 }
 .selection__input-items-links:hover {
   color: var(--primary-color);
@@ -694,9 +722,9 @@ a {
 /* Làm phần khung sản phẩm  */
 .home__product {
   margin-bottom: 10px;
-  z-index: 1;
+  z-index: 2;
 }
-.home__product-items  {
+.home__product-items {
   display: block;
   background-color: var(--white-color);
   margin-top: 10px;
@@ -712,7 +740,7 @@ a {
   transform: translateY(-1px);
   /* cho nhích lên 1px  */
 }
-.home__product-img{
+.home__product-img {
   padding-top: 100%;
   /* Khi dùng background-image chỉ cần dùng padding top 100% thì chiều ngang dọc sẽ bằng với thằng chứa nó  */
   background-repeat: no-repeat;
@@ -742,9 +770,8 @@ a {
   text-decoration: line-through;
   /* tạo dấu gạch ngang ở giữa chữ  */
   padding-right: 5px;
-
 }
-.home__product-price-new{
+.home__product-price-new {
   font-size: 1rem;
   color: var(--primary-color);
 }
@@ -772,8 +799,8 @@ i.home__product-heart-fill {
 .home__product-rating {
   font-size: 0.7rem;
 }
-i.home__product-rating-gold{
-  color: #FFCE3E;
+i.home__product-rating-gold {
+  color: #ffce3e;
 }
 .home__product-items-sold {
   font-size: 0.8rem;
@@ -786,7 +813,7 @@ i.home__product-rating-gold{
 }
 .home__product__favourite {
   position: absolute;
-  top:5px;
+  top: 5px;
   left: -4px;
   color: var(--white-color);
   background-color: var(--primary-color);
@@ -818,7 +845,7 @@ i.home__product-rating-gold{
   top: 2px;
   width: 40px;
   height: 36px;
-  background-color: #FFD840;
+  background-color: #ffd840;
   text-align: center;
   border-top-right-radius: 2px;
 }
@@ -832,7 +859,7 @@ i.home__product-rating-gold{
   font-weight: 1000;
   color: var(--white-color);
 }
-.home__product__safe-off::after {  
+.home__product__safe-off::after {
   content: "";
   position: absolute;
   left: 0px;
@@ -840,30 +867,57 @@ i.home__product-rating-gold{
   border-width: 0 20px 5px;
   /* bỏ phần top đi  */
   border-style: solid;
-  border-color: transparent  #FFD840 transparent #FFD840;
-
+  border-color: transparent #ffd840 transparent #ffd840;
 }
 /* pagination  */
 .pagination-distance {
   margin-top: 48px;
   margin-bottom: 32px;
 }
-/* footer  */
+/* logo  */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 100px;
+  margin: auto;
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+  border-radius: 50%;
+}
+
+.video-overlay {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  z-index: 1;
+}
 .footer {
   padding-top: 32px;
   border-top: 4px solid var(--primary-color);
+  background-image: url(./img/footer3.png);
+  height: 300px;
 }
+
 .grid__column-heading {
   font-size: 1.3rem;
   text-align: start;
   font-weight: 1000;
-
 }
 .grid__column-list {
   list-style: none;
-  padding-left:0;
-} 
-.grid__column-items-links  {
+  padding-left: 0;
+}
+.grid__column-items-links {
   font-weight: 500;
 }
 .grid__column-items-links:hover {
@@ -897,7 +951,7 @@ i.home__product-rating-gold{
   min-height: 40px;
   padding: 10px 20px;
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: #e4e1e1;
   font-size: 1.2rem;
 }
 .address {
@@ -905,23 +959,216 @@ i.home__product-rating-gold{
   border-top: 10px;
   font-weight: 1000;
 }
-
+.list__catagory {
+  font-size: 14px;
+  font-weight: 600;
+}
 .faq-section {
   margin-top: 5px;
 }
+.danhmucchung {
+  color: red;
+  font-size: 20px;
+  font-weight: 500;
+}
+.faq-item .danhmucchung {
+  display: none;
+  font-size: 16px;
+  font-weight: 1000px;
+}
 
+.faq-item h3:hover {
+  cursor: pointer;
+  color: #4caf50;
+}
+.font__danhmuc {
+  font-size: 16px;
+}
+.danhmuc {
+  margin-top: 100px;
+  padding-top: 100px;
+  border-top: 100px solid #000;
+}
+/* quay lại đầu trang  */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50%;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  display: none; /* Ẩn nút lúc đầu */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
+.back-to-top:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+/* khung chat */
 
-  .faq-item .danhmucchung {
-      display: none;
-      font-size: 16px;
-      font-weight: 1000px;
+/* Khung chat tổng */
+.chat-container {
+  z-index: 1000;
+  position: fixed;
+  bottom: 75px;
+  left: 35px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  display: none; /* Bắt đầu ẩn */
+  flex-direction: column;
+}
+
+/* Phần tiêu đề khung chat */
+.chat-header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+/* Khu vực hiển thị tin nhắn */
+.chat-body {
+  background-color: #fff;
+  height: 250px;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tin nhắn người dùng */
+.message {
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin: 5px 0;
+  max-width: 80%;
+}
+
+/* Tin nhắn của người dùng */
+.user-message {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+/* Tin nhắn từ chatbot */
+.bot-message {
+  align-self: flex-start;
+  background-color: #eee;
+}
+
+/* Khu vực nhập liệu */
+.chat-footer {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+/* Ô nhập */
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Nút gửi tin nhắn */
+.send-button {
+  background-color: #ff9100;
+  color: #fff;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Nút mở khung chat */
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+/* Dấu x khung chat  */
+.daux {
+  padding-right: 70px;
+  background-color: #007bff;
+}
+
+/* dãy leg */
+.color-bar {
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 400% 100%;
+  animation: colorChange 5s infinite;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes colorChange {
+  0% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* logo động  *
+/* border-radius: 50%;:
+Biến phần tử hình vuông thành hình tròn.
+overflow: hidden;:
+Ẩn những phần của video nằm ngoài hình tròn.
+object-fit: cover;:
+Đảm bảo video hiển thị đầy đủ trong hình tròn mà không bị méo.
+Kích thước container:
+Tùy chỉnh width và height của .video-container để thay đổi kích thước hình tròn. */
 
-  .faq-item h3:hover {
-      cursor: pointer;
-      color: #4CAF50;
-  }
-  .font__danhmuc {
-    font-size: 16px;
-  }
+.uudai {
+  height: 30px;
+  background-color: orangered;
+  color: black;
+  font-weight: 1000;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* footer  */
+.allfooter {
+  border-top: 5px solid #000;
+}

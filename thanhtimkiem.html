@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tìm Kiếm Sản Phẩm</title>
+    <style>
+      /* Style cho khung tìm kiếm */
+      .search-container {
+        max-width: 500px;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        background-color: #fff;
+      }
+
+      .search-container input {
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      .search-container button {
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: #6e45e2;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      .search-container button:hover {
+        background-color: #88d3ce;
+      }
+
+      /* Style cho danh sách sản phẩm */
+      .product-list {
+        margin-top: 20px;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .product-list li {
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+      .product-list li.hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Khung tìm kiếm -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="search"
+        placeholder="Nhập tên mặt hàng để tìm kiếm..."
+      />
+      <button onclick="searchProduct()">Tìm Kiếm</button>
+    </div>
+
+    <!-- Danh sách các sản phẩm -->
+    <ul class="product-list" id="productList">
+      <li class="product-item">Áo Thun Nam</li>
+      <li class="product-item">Quần Jean</li>
+      <li class="product-item">Giày Sneaker</li>
+      <li class="product-item">Mũ Bóng Chày</li>
+      <li class="product-item">Áo Khoác</li>
+      <li class="product-item">Sách Học Tiếng Anh</li>
+    </ul>
+
+    <script>
+      // Hàm tìm kiếm sản phẩm
+      function searchProduct() {
+        var searchQuery = document.getElementById("search").value.toLowerCase();
+        var productItems = document.getElementsByClassName("product-item");
+
+        for (var i = 0; i < productItems.length; i++) {
+          var productName =
+            productItems[i].textContent || productItems[i].innerText;
+
+          // Kiểm tra xem tên sản phẩm có chứa từ khóa tìm kiếm hay không
+          if (productName.toLowerCase().includes(searchQuery)) {
+            productItems[i].classList.remove("hidden"); // Hiển thị sản phẩm
+          } else {
+            productItems[i].classList.add("hidden"); // Ẩn sản phẩm không phù hợp
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

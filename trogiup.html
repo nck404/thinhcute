@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trợ Giúp</title>
+    <style>
+      /* Reset margin và padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Font và màu sắc chủ đạo */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f2f5f7;
+        color: #333;
+      }
+
+      /* Container chính */
+      .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Tiêu đề chính */
+      .title {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      /* Phần FAQ */
+      .faq-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      /* Từng mục FAQ */
+      .faq-item {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #007bff;
+        transition: background 0.3s ease;
+      }
+
+      .faq-item:hover {
+        background: #eef5ff;
+      }
+
+      .faq-question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        font-weight: bold;
+        color: #007bff;
+        font-size: 18px;
+      }
+
+      .faq-answer {
+        margin-top: 10px;
+        font-size: 16px;
+        display: none;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .faq-question::after {
+        content: "▼";
+        font-size: 14px;
+        color: #007bff;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-question.open::after {
+        transform: rotate(-180deg);
+      }
+
+      /* Điều hướng phía trên */
+      .nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .nav a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      .nav a:hover {
+        color: #0056b3;
+      }
+
+      /* Hiệu ứng icon */
+      .icon {
+        font-size: 20px;
+        margin-right: 10px;
+        color: #007bff;
+      }
+    </style>
+    <script>
+      function toggleFAQ(event) {
+        const answer = event.nextElementSibling;
+        event.classList.toggle("open");
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Thanh điều hướng -->
+    <div class="nav">
+      <a href="#overview">Tổng Quan</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Liên Hệ</a>
+    </div>
+
+    <!-- Nội dung chính -->
+    <div class="container">
+      <h1 class="title">Trợ Giúp & Hỗ Trợ</h1>
+      <p style="text-align: center; font-size: 16px; color: #555">
+        Chào mừng bạn đến với trang trợ giúp! Dưới đây là các câu hỏi thường gặp
+        để giúp bạn dễ dàng sử dụng dịch vụ của chúng tôi.
+      </p>
+
+      <div class="faq-section" id="faq">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span><i class="icon">🔒</i>Làm thế nào để đăng ký tài khoản?</span>
+          </div>
+          <div class="faq-answer">
+            Để đăng ký tài khoản, bạn hãy nhấp vào nút "Đăng ký" ở góc phải của
+            trang, điền thông tin yêu cầu và làm theo hướng dẫn.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span><i class="icon">🔑</i>Quên mật khẩu thì làm sao?</span>
+          </div>
+          <div class="faq-answer">
+            Nếu bạn quên mật khẩu, hãy nhấp vào liên kết "Quên mật khẩu" trên
+            trang đăng nhập và làm theo các bước để khôi phục mật khẩu của bạn.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span><i class="icon">📞</i>Làm thế nào để liên hệ hỗ trợ?</span>
+          </div>
+          <div class="faq-answer">
+            Bạn có thể liên hệ với chúng tôi qua email tại địa chỉ
+            support@example.com hoặc gọi đến số điện thoại hỗ trợ của chúng tôi.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

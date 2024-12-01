@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>Order Confirmation</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom right, #4caf50, #81c784);
+        height: 100vh;
+        color: #333;
+      }
+
+      .container {
+        background: #fff;
+        padding: 30px 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        text-align: center;
+      }
+
+      .container .icon {
+        font-size: 50px;
+        color: #4caf50;
+        margin-bottom: 20px;
+      }
+
+      .container h1 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .container p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .order-details {
+        background: #f9f9f9;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: left;
+        margin: 20px 0;
+      }
+
+      .order-details h3 {
+        margin: 0;
+        color: #4caf50;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .order-details ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+      }
+
+      .order-details ul li {
+        margin-bottom: 5px;
+      }
+
+      button {
+        display: inline-block;
+        background: linear-gradient(to right, #4caf50, #81c784);
+        color: #fff;
+        font-size: 16px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background: linear-gradient(to right, #81c784, #4caf50);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      }
+      .container i {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="icon">🎉</div>
+      <h1>Đơn hàng đã được đặt!</h1>
+      <p>
+        Cảm ơn bạn đã tin tưởng chúng tôi
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-regular fa-heart"></i>
+      </p>
+      <div class="order-details">
+        <h3>Chi tiết đơn hàng:</h3>
+        <ul>
+          <li><strong>ID:</strong> #123456</li>
+          <li><strong>Ngày đặt:</strong> 2024-11-18</li>
+          <li><strong>Tổng tiền:</strong> 520.000 VND</li>
+        </ul>
+      </div>
+      <button onclick="window.location.href='index2.html'">
+        Tiếp tục mua sắm
+      </button>
+    </div>
+  </body>
+</html>

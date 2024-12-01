@@ -1,0 +1,27 @@
+.video-footer {
+  /* position: relative; */
+  position: fixed;
+  top: 0px;
+
+  z-index: -1 !important;
+
+  width: 100%; /* Kích thước chiều rộng */
+  height: 150px; /* Kích thước chiều cao */
+  overflow: hidden;
+  /* border-radius: 50%; Biến thành hình tròn */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng bóng */
+}
+.video-footer video {
+  width: 100%; /* Đảm bảo video phủ kín container */
+  height: 100%;
+  z-index: -9999999;
+  object-fit: cover; /* Video lấp đầy nhưng không bị méo */
+}
+.navbar {
+  position: fixed;
+  top: 0px;
+  z-index: 999999999999999;
+}
+.app__container {
+  margin-top: 148.002px;
+}

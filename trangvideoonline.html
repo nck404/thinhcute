@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Web Video</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+      header {
+        background-color: #ff0000;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+      .video-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      .video-thumbnail {
+        position: relative;
+        overflow: hidden;
+        height: 180px;
+      }
+      .video-thumbnail video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .video-info {
+        padding: 15px;
+      }
+      .video-info h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 8px;
+      }
+      .video-info p {
+        margin: 0;
+        font-size: 14px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Video đánh giá chân thật</header>
+    <div class="container">
+      <!-- Video Card 1 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <video controls muted>
+            <source src="./assets/img/reviewiphone11pro.mp4" type="video/mp4" />
+            Trình duyệt của bạn không hỗ trợ video.
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>Review chi tiết iphone 11 pro</h3>
+          <p>100,000 lượt xem • 1 ngày trước</p>
+        </div>
+      </div>
+      <!-- Video Card 2 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <video controls muted>
+            <source
+              src="./assets/img/reviewiphone16promax.mp4"
+              type="video/mp4"
+            />
+            Trình duyệt của bạn không hỗ trợ video.
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>Review chi tiết iphone 16 pro max</h3>
+          <p>50,000 lượt xem • 2 ngày trước</p>
+        </div>
+      </div>
+      <!-- Video Card 3 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <video controls muted>
+            <source src="./assets/img/reviewtivixiaomi.mp4" type="video/mp4" />
+            Trình duyệt của bạn không hỗ trợ video.
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>Review chi tiết tivi xiaomi</h3>
+          <p>200,000 lượt xem • 5 ngày trước</p>
+        </div>
+      </div>
+      <!-- Video Card 3 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <video controls muted>
+            <source src="video3.mp4" type="video/mp4" />
+            Trình duyệt của bạn không hỗ trợ video.
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>Review chi tiết tivi samsung</h3>
+          <p>200,000 lượt xem • 5 ngày trước</p>
+        </div>
+      </div>
+      <!-- Video Card 3 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <video controls muted>
+            <source src="video3.mp4" type="video/mp4" />
+            Trình duyệt của bạn không hỗ trợ video.
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>Review chi tiết tivi sony</h3>
+          <p>200,000 lượt xem • 5 ngày trước</p>
+        </div>
+      </div>
+      <!-- Video Card 3 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <video controls muted>
+            <source src="video3.mp4" type="video/mp4" />
+            Trình duyệt của bạn không hỗ trợ video.
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>Review chi tiết điện thoại oppo</h3>
+          <p>200,000 lượt xem • 5 ngày trước</p>
+        </div>
+      </div>
+      <!-- Video Card 3 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <video controls muted>
+            <source src="video3.mp4" type="video/mp4" />
+            Trình duyệt của bạn không hỗ trợ video.
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>Review chi tiết airpod pro fake</h3>
+          <p>200,000 lượt xem • 5 ngày trước</p>
+        </div>
+      </div>
+      <!-- Video Card 3 -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <video controls muted>
+            <source src="video3.mp4" type="video/mp4" />
+            Trình duyệt của bạn không hỗ trợ video.
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>Review chi tiết tai nghe có dây giá rẻ</h3>
+          <p>200,000 lượt xem • 5 ngày trước</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

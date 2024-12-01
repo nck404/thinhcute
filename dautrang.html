@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nút Quay Lại Đầu Trang</title>
+    <style>
+      /* Đặt chiều cao nội dung trang để thử nghiệm cuộn */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      .content {
+        height: 1500px;
+        padding: 20px;
+      }
+
+      /* CSS cho nút quay lại đầu trang */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 50%;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        display: none; /* Ẩn nút lúc đầu */
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .back-to-top:hover {
+        background-color: #0056b3;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Nội dung trang</h1>
+      <p>Cuộn xuống để xem nút quay lại đầu trang.</p>
+      <!-- Tạo nội dung giả để có thể cuộn -->
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec
+        urna vel est auctor tempor. Nullam ultricies, lectus et tincidunt
+        scelerisque, ex turpis sollicitudin ex, eget congue felis arcu nec
+        nulla. Mauris bibendum, nisi eu aliquam fermentum, nulla sem vestibulum
+        ex, eget accumsan turpis mauris at lectus. Fusce suscipit fermentum
+        nibh, nec bibendum lorem convallis ac.
+      </p>
+    </div>
+
+    <!-- Nút quay lại đầu trang -->
+    <button onclick="scrollToTop()" class="back-to-top" id="backToTopBtn">
+      ↑
+    </button>
+
+    <script>
+      // Hiển thị nút khi cuộn xuống
+      window.onscroll = function () {
+        toggleBackToTopButton();
+      };
+
+      function toggleBackToTopButton() {
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      }
+
+      // Hàm cuộn về đầu trang
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>

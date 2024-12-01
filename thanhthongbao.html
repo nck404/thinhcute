@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiển thị Hello</title>
+    <script>
+      function showMessage() {
+        const output = document.getElementById("output");
+        // Kiểm tra trạng thái hiện tại của nội dung
+        if (output.textContent === "Hello") {
+          output.textContent = ""; // Trở về trạng thái ban đầu (trống)
+        } else {
+          output.textContent = "Hello"; // Hiển thị "Hello"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Đối tượng có sự kiện click -->
+    <button onclick="showMessage()">Click Me!</button>
+    <!-- Vùng hiển thị kết quả -->
+    <p id="output"></p>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+.video-sieugiamgia {
+  margin-top: 15px;
+  border-radius: 5px;
+  border-width: 10px;
+  padding-left: 30px;
+  position: relative;
+  width: 400px; /* Kích thước chiều rộng */
+  height: 200px; /* Kích thước chiều cao */
+  overflow: hidden;
+  /* border-radius: 50%; Biến thành hình tròn */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng bóng */
+}
+.video-sieugiamgia video {
+  width: 100%; /* Đảm bảo video phủ kín container */
+  height: 100%;
+  object-fit: cover; /* Video lấp đầy nhưng không bị méo */
+}

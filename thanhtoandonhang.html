@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Thanh Toán Đơn Hàng</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      /* Thiết lập nền gradient và animation cho toàn trang */
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #6e45e2, #88d3ce);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        color: #333;
+        animation: fadeIn 1.2s ease-in-out;
+      }
+      /* Animation cho nền trang */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Container chính của form thanh toán */
+      .checkout-container {
+        width: 100%;
+        max-width: 550px;
+        background-color: #fff;
+        padding: 25px 35px;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+        animation: slideUp 1s ease forwards;
+      }
+      /* Animation cho form xuất hiện từ dưới lên */
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .checkout-container h2 {
+        font-size: 26px;
+        color: #6e45e2;
+        margin-bottom: 20px;
+        animation: popIn 0.8s ease;
+      }
+      /* Animation chữ xuất hiện */
+      @keyframes popIn {
+        0% {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Phong cách cho từng trường form */
+      .form-group {
+        margin-bottom: 18px;
+        text-align: left;
+      }
+      .form-group label {
+        font-weight: bold;
+        color: #555;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeIn 1.2s ease;
+      }
+      /* Hiệu ứng khi input được chọn */
+      .form-group input:focus,
+      .form-group select:focus {
+        border-color: #6e45e2;
+        box-shadow: 0 4px 10px rgba(110, 69, 226, 0.2);
+        transform: scale(1.02);
+      }
+
+      /* Thiết kế phần tóm tắt đơn hàng */
+      .order-summary {
+        margin-top: 25px;
+        padding: 20px;
+        background: #f3f3f3;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        animation: fadeIn 1.5s ease;
+      }
+      .order-summary p {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0;
+        font-weight: bold;
+        color: #6e45e2;
+      }
+
+      /* Phong cách cho nút thanh toán */
+      .btn-submit {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(to right, #6e45e2, #88d3ce);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease, transform 0.2s ease;
+        animation: buttonBounce 2s ease infinite alternate;
+      }
+      /* Animation rung nhẹ cho nút thanh toán */
+      @keyframes buttonBounce {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-3px);
+        }
+      }
+
+      /* Hiệu ứng hover cho nút thanh toán */
+      .btn-submit:hover {
+        background: linear-gradient(to right, #88d3ce, #6e45e2);
+        transform: translateY(-2px) scale(1.02);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="checkout-container">
+      <h2>Thanh Toán Đơn Hàng</h2>
+
+      <!-- Thông tin khách hàng -->
+      <div class="form-group">
+        <label for="fullname">Họ và tên :</label>
+        <input type="text" id="fullname" name="fullname" required />
+      </div>
+      <div class="form-group">
+        <label for="fullname">ID:</label>
+        <input type="text" id="fullname" name="fullname" required />
+      </div>
+      <div class="form-group">
+        <label for="fullname">Ngày đặt:</label>
+        <input type="text" id="fullname" name="fullname" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Số Điện Thoại:</label>
+        <input type="tel" id="phone" name="phone" required />
+      </div>
+
+      <!-- Thông tin giao hàng -->
+      <div class="form-group">
+        <label for="address">Địa Chỉ Giao Hàng:</label>
+        <input type="text" id="address" name="address" required />
+      </div>
+      <div class="form-group">
+        <label for="city">Thành Phố:</label>
+        <input type="text" id="city" name="city" required />
+      </div>
+      <div class="form-group">
+        <label for="postalcode">Mã Bưu Điện:</label>
+        <input type="text" id="postalcode" name="postalcode" required />
+      </div>
+
+      <!-- Thông tin thanh toán -->
+      <div class="form-group">
+        <label for="payment-method">Phương Thức Thanh Toán:</label>
+        <select id="payment-method" name="payment-method">
+          <option value="credit-card">Thẻ Tín Dụng</option>
+          <option value="paypal">PayPal</option>
+          <option value="cash-on-delivery">Thanh Toán Khi Nhận Hàng</option>
+        </select>
+      </div>
+      <div class="form-group">
+        
+        <div class="" style="color: #6e45e2; font-size: 16px; font-weight: 800">
+          Nhấn vào đây để lấy mã qr nha 
+          <a href="./assets/img/maqr.jpg" <i class="fa-solid fa-qrcode"></i> </a>
+          
+        </div>
+      </div>
+      <div class="form-group">
+        <!-- <label for="expiry">Ngày Hết Hạn:</label> -->
+        <!-- <input type="month" id="expiry" name="expiry" /> -->
+      </div>
+      <div class="form-group">
+        <!-- <label for="cvc">Mã CVC:</label> -->
+        <input type="text" id="cvc" name="cvc" placeholder="123" />
+      </div>
+      <div style="text-align: left; color: red">
+        Nhấn "Đặt hàng" đồng nghĩa là bạn đã đồng tuân theo điều khoản của shop
+        chúng tôi
+      </div>
+      <!-- Tóm tắt đơn hàng -->
+      <div class="order-summary">
+        <p><span>Tổng Tiền:</span> <span>500.000 VND</span></p>
+        <p><span>Phí Vận Chuyển:</span> <span>20.000 VND</span></p>
+        <p>
+          <span><strong>Thành Tiền:</strong></span>
+          <span><strong>520.000 VND</strong></span>
+        </p>
+      </div>
+
+      <!-- Nút hoàn tất thanh toán -->
+      <button class="btn-submit"; >
+        <a href="thongbaodonhang.html" style="text-decoration: none;">Hoàn Tất Thanh Toán</a>
+        
+      </button>
+    </div>
+
+    <script>
+      // Hàm xử lý thanh toán và lấy thông tin
+      function processPayment() {
+        // Lấy thông tin từ các trường nhập liệu
+        const fullname = document.getElementById("fullname").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const address = document.getElementById("address").value;
+        const city = document.getElementById("city").value;
+        const postalcode = document.getElementById("postalcode").value;
+        const paymentMethod = document.getElementById("payment-method").value;
+        const cardNumber = document.getElementById("card-number").value;
+        const expiry = document.getElementById("expiry").value;
+        const cvc = document.getElementById("cvc").value;
+
+        // Hiển thị thông tin lấy được trong console (hoặc có thể gửi đến server)
+        console.log("Thông Tin Khách Hàng:");
+        console.log("Họ và Tên:", fullname);
+        console.log("Email:", email);
+        console.log("Số Điện Thoại:", phone);
+        console.log("Địa Chỉ:", address);
+        console.log("Thành Phố:", city);
+        console.log("Mã Bưu Điện:", postalcode);
+        console.log("Phương Thức Thanh Toán:", paymentMethod);
+        console.log("Số Thẻ:", cardNumber);
+        console.log("Ngày Hết Hạn:", expiry);
+        console.log("Mã CVC:", cvc);
+
+        // Bạn có thể thực hiện các thao tác khác ở đây, ví dụ như gửi dữ liệu này đến server.
+        alert("Thông tin đã được gửi thành công!");
+      }
+    </script>
+  </body>
+</html>

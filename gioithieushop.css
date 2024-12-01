@@ -1,0 +1,16 @@
+.video-gioithieu {
+  border-radius: 5px;
+  border-width: 10px;
+  padding-left: 30px;
+  position: relative;
+  width: 360px; /* Kích thước chiều rộng */
+  height: 450px; /* Kích thước chiều cao */
+  overflow: hidden;
+  /* border-radius: 50%; Biến thành hình tròn */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng bóng */
+}
+.video-gioithieu video {
+  width: 100%; /* Đảm bảo video phủ kín container */
+  height: 100%;
+  object-fit: cover; /* Video lấp đầy nhưng không bị méo */
+}

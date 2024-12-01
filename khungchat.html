@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khung Chat Online</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      /* Đặt font và nền */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+      }
+
+      /* Khung chat tổng */
+      .chat-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 300px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+        display: none; /* Bắt đầu ẩn */
+        flex-direction: column;
+      }
+
+      /* Phần tiêu đề khung chat */
+      .chat-header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      /* Khu vực hiển thị tin nhắn */
+      .chat-body {
+        background-color: #fff;
+        height: 250px;
+        padding: 10px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Tin nhắn người dùng */
+      .message {
+        padding: 8px 12px;
+        border-radius: 12px;
+        margin: 5px 0;
+        max-width: 80%;
+      }
+
+      /* Tin nhắn của người dùng */
+      .user-message {
+        align-self: flex-end;
+        background-color: #dcf8c6;
+      }
+
+      /* Tin nhắn từ chatbot */
+      .bot-message {
+        align-self: flex-start;
+        background-color: #eee;
+      }
+
+      /* Khu vực nhập liệu */
+      .chat-footer {
+        display: flex;
+        border-top: 1px solid #ddd;
+      }
+
+      /* Ô nhập */
+      .chat-input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+      }
+
+      /* Nút gửi tin nhắn */
+      .send-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 0 15px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      /* Nút mở khung chat */
+      .chat-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Nút mở khung chat -->
+    <button class="chat-toggle" onclick="toggleChat()">💬</button>
+    <i class="fa-solid fa-xmark"></i>
+    <!-- Khung chat -->
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-header" onclick="toggleChat()">
+        <i class="fa-solid fa-xmark"></i>
+        <span style="textalgin">Chat Hỗ Trợ</span>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <!-- Tin nhắn sẽ hiển thị tại đây -->
+      </div>
+      <div class="chat-footer">
+        <input
+          type="text"
+          class="chat-input"
+          id="chatInput"
+          placeholder="Nhập tin nhắn..."
+        />
+        <button class="send-button" onclick="sendMessage()">Gửi</button>
+      </div>
+    </div>
+
+    <script>
+      // Hàm mở/đóng khung chat
+      function toggleChat() {
+        const chatContainer = document.getElementById("chatContainer");
+        chatContainer.style.display =
+          chatContainer.style.display === "flex" ? "none" : "flex";
+      }
+
+      // Hàm gửi tin nhắn
+      function sendMessage() {
+        const chatBody = document.getElementById("chatBody");
+        const chatInput = document.getElementById("chatInput");
+        const userMessage = chatInput.value.trim();
+
+        if (userMessage) {
+          // Tạo tin nhắn của người dùng
+          const messageElem = document.createElement("div");
+          messageElem.className = "message user-message";
+          messageElem.textContent = userMessage;
+          chatBody.appendChild(messageElem);
+
+          // Cuộn đến tin nhắn mới nhất
+          chatBody.scrollTop = chatBody.scrollHeight;
+
+          // Xóa nội dung ô nhập
+          chatInput.value = "";
+
+          // Trả lời giả lập từ chatbot
+          setTimeout(() => {
+            const botMessageElem = document.createElement("div");
+            botMessageElem.className = "message bot-message";
+            botMessageElem.textContent =
+              "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.";
+            chatBody.appendChild(botMessageElem);
+
+            // Cuộn đến tin nhắn mới nhất
+            chatBody.scrollTop = chatBody.scrollHeight;
+          }, 1000);
+        }
+      }
+
+      // Kích hoạt gửi tin nhắn khi nhấn Enter
+      document
+        .getElementById("chatInput")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            sendMessage();
+          }
+        });
+    </script>
+  </body>
+</html>

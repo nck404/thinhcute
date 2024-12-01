@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Hình Tròn</title>
+    <style>
+      .video-container {
+        position: relative;
+        width: 100px; /* Kích thước chiều rộng */
+        height: 100px; /* Kích thước chiều cao */
+        overflow: hidden;
+        border-radius: 50%; /* Biến thành hình tròn */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng bóng */
+      }
+      .video-container video {
+        width: 100%; /* Đảm bảo video phủ kín container */
+        height: 100%;
+        object-fit: cover; /* Video lấp đầy nhưng không bị méo */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="./assets/img/videologo.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </body>
+</html>
